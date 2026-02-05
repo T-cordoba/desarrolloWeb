@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Personaliza tu Nissan 240SX - Formulario</title>
+</head>
+<body>
+    <a href="/">Volver</a>
+    <h1>Personaliza tu Nissan 240SX</h1>
+    <p>Completa el formulario para describir cómo personalizarías tu 240SX. Solo HTML, varios tipos de input.</p>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos del propietario</legend>
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+
+            <label for="website">Página personal (opcional):</label>
+            <input type="url" id="website" name="website" placeholder="https://">
+        </fieldset>
+
+        <fieldset>
+            <legend>Información del vehículo</legend>
+
+            <label for="anio">Año del coche:</label>
+            <input type="number" id="anio" name="anio" min="1985" max="2000" value="1990">
+
+            <label for="modelo">Modelo:</label>
+            <select id="modelo" name="modelo">
+                <option value="s13">240SX (S13)</option>
+                <option value="s14">240SX (S14)</option>
+                <option value="otro">Otro / personalizado</option>
+            </select>
+
+            <label for="busqueda">Busca características (ej: drift, show):</label>
+            <input type="search" id="busqueda" name="busqueda" placeholder="palabras clave">
+
+            <label for="vin">Número de chasis (VIN):</label>
+            <input type="text" id="vin" name="vin" maxlength="17" placeholder="Opcional">
+        </fieldset>
+
+        <fieldset>
+            <legend>Motor y rendimiento</legend>
+
+            <label for="motor">Motor preferido:</label>
+            <datalist id="motores">
+                <option value="SR20DET">
+                <option value="KA24DE">
+                <option value="RB-series swap">
+                <option value="SR20VE">
+            </datalist>
+            <input list="motores" id="motor" name="motor" placeholder="Elige o escribe">
+
+            <label for="potencia">Potencia objetivo (hp): <output id="potOut">300</output></label>
+            <input type="range" id="potencia" name="potencia" min="100" max="1000" value="300" oninput="potOut.value = potencia.value">
+
+            <p>Sistema de admisión:</p>
+            <label><input type="radio" name="admisión" value="stock" checked> Stock</label>
+            <label><input type="radio" name="admisión" value="turbo"> Turbo</label>
+            <label><input type="radio" name="admisión" value="supercharger"> Supercharger</label>
+
+            <label for="peso">Peso objetivo (kg):</label>
+            <input type="number" id="peso" name="peso" min="900" max="1500" step="10" value="1200">
+        </fieldset>
+
+        <fieldset>
+            <legend>Exterior y estética</legend>
+
+            <p>Kit de carrocería (marca):</p>
+            <label><input type="checkbox" name="kit[]" value="rocketbunny"> Rocket Bunny</label>
+            <label><input type="checkbox" name="kit[]" value="varis"> Varis</label>
+            <label><input type="checkbox" name="kit[]" value="nismo"> Nismo</label>
+            <label><input type="checkbox" name="kit[]" value="ninguno"> Ninguno</label>
+
+            <label for="color">Color exterior:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+
+            <label for="llantas">Tamaño de llantas (pulgadas):</label>
+            <input type="number" id="llantas" name="llantas" min="13" max="22" value="17">
+
+            <label for="tipo_llantas">Tipo de llanta:</label>
+            <select id="tipo_llantas" name="tipo_llantas">
+                <option value="racing">Racing</option>
+                <option value="concavo">Cóncavo</option>
+                <option value="retro">Retro</option>
+                <option value="forjado">Forjado</option>
+            </select>
+
+            <label for="matricula">Texto personalizado para matrícula:</label>
+            <input type="text" id="matricula" name="matricula" maxlength="8" placeholder="4CAR240S">
+        </fieldset>
+
+        <fieldset>
+            <legend>Interior y confort</legend>
+
+            <label for="asientos">Asientos:</label>
+            <select id="asientos" name="asientos">
+                <option value="stock">Stock</option>
+                <option value="recaro">Recaro deportivos</option>
+                <option value="baquet">Baquet con arnés</option>
+            </select>
+
+            <label for="volante">Volante:</label>
+            <input type="radio" id="volante1" name="volante" value="stock" checked><label for="volante1">Stock</label>
+            <input type="radio" id="volante2" name="volante" value="momo"><label for="volante2">Momo</label>
+            <input type="radio" id="volante3" name="volante" value="sparco"><label for="volante3">Sparco</label>
+
+            <label for="sonido">Sistema de sonido (breve):</label>
+            <textarea id="sonido" name="sonido" rows="3" placeholder="Describe tu sistema de sonido ideal"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Iluminación y extras</legend>
+
+            <label><input type="checkbox" name="extras[]" value="led"> Luces LED</label>
+            <label><input type="checkbox" name="extras[]" value="xenon"> Xenón</label>
+            <label><input type="checkbox" name="extras[]" value="interiorRGB"> Iluminación interior RGB</label>
+
+            <label for="neon">Neón bajo el coche:</label>
+            <input type="range" id="neon" name="neon" min="0" max="5" value="0">
+
+            <label for="files">Sube fotos de referencia (imágenes):</label>
+            <input type="file" id="files" name="files[]" accept="image/*" multiple>
+        </fieldset>
+
+        <fieldset>
+            <legend>Planificación y presupuesto</legend>
+
+            <label for="fecha">Fecha preferida para empezar:</label>
+            <input type="date" id="fecha" name="fecha">
+
+            <label for="hora">Hora preferida:</label>
+            <input type="time" id="hora" name="hora">
+
+            <label for="presupuesto">Presupuesto aproximado (€):</label>
+            <input type="number" id="presupuesto" name="presupuesto" min="0" step="100">
+
+            <p>Rango de prioridad de presupuesto:</p>
+            <meter id="presMeter" min="0" max="5" value="3">3/5</meter>
+        </fieldset>
+
+        <fieldset>
+            <legend>Confirmación</legend>
+
+            <label for="contacto">¿Deseas que te contactemos?</label>
+            <select id="contacto" name="contacto">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label><input type="checkbox" name="terminos" required> Acepto que esta es una simulación educativa</label>
+        </fieldset>
+
+        <p>
+            <button type="submit">Enviar personalización</button>
+            <button type="reset">Restablecer formulario</button>
+        </p>
+    </form>
+</body>
+</html>
+// ...existing code...
